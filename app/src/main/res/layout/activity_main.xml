@@ -7,14 +7,14 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/btnLogin"
-        android:textColor="#ff0000"
+        android:id="@+id/btnNav"
+        android:textColor="#E31414"
         android:textSize="22sp"
-        android:textStyle="bold"
+        android:textStyle="italic"
         android:layout_width="156dp"
         android:layout_height="162dp"
         android:layout_marginTop="64dp"
-        android:text="Alert Disaster"
+        android:text="Report Disaster"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
