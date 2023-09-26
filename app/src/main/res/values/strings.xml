@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Help_Disaster</string>
+    <string name="disaster_type">Disaster Type</string>
+
+<string-array name="disaster_types">
+<item>Tsunami</item>
+<item>Tornado</item>
+<item>Flood</item>
+<item>Earthquake</item>
+
+</string-array>
 </resources>
