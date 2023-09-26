@@ -134,15 +134,14 @@
     >
 
     <TextView
+        android:id="@+id/RadioTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Are you present at Disaster Location: "
         android:textSize="18sp" />
-
     <include layout="@layout/radiogroups"/>
 </LinearLayout>
-
     <TextView
         android:id="@+id/uploadVd"
         android:layout_width="wrap_content"
@@ -160,18 +159,15 @@
         android:text="(optional)"
         app:layout_constraintLeft_toRightOf="@+id/uploadVd"
         android:layout_marginVertical="5dp"
-        app:layout_constraintTop_toBottomOf="@+id/radio"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/radio" />
     <Button
-        android:id="@+id/btnUpload"
+        android:id="@+id/btnConfirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Confirm"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginVertical="50dp"
-
+        android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/uploadVd"/>

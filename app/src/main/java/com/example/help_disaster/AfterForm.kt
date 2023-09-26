@@ -10,15 +10,57 @@ import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.widget.TextView
+import android.widget.Toast
+import com.example.help_disaster.databinding.ActivityAfterFormBinding
+
+
 class AfterForm : AppCompatActivity() {
+    private var a = 0
     private lateinit var uploadVideoTextView: TextView
     private val PICK_VIDEO_REQUEST = 1
+    private lateinit var binding: ActivityAfterFormBinding
     override fun onCreate(savedInstanceState: Bundle?) {
-
+        binding = ActivityAfterFormBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_after_form)
-        uploadVideoTextView = findViewById(R.id.uploadVd)
+        setContentView(binding.root)
 
+        // After Confirmation
+        binding.btnConfirm.setOnClickListener {
+            val name = binding.etDisType.text.toString()
+            val phone = binding.etuserPhone.text.toString()
+            val locationInfo = binding.etDetails.text.toString()
+
+            if (name.isBlank()) {
+                binding.userName.error = "Please Enter Your Name"
+            } else {
+                binding.userName.error = null
+            }
+            if (phone.isBlank()) {
+                binding.userPhone.error = "Please Enter Your Name"
+            } else {
+                binding.userPhone.error = null
+            }
+            /*if (a == 0) {
+                binding.RadioTV.error = "Please Select One"
+            } else {
+                binding.RadioTV.error = null
+            }*/
+            if (locationInfo.isBlank()) {
+                binding.Details.error = "Please Enter Your Name"
+            } else {
+                binding.Details.error = null
+            }
+            if (name.isNotBlank() && phone.isNotEmpty() && locationInfo.isNotEmpty()) {
+                Toast.makeText(this@AfterForm, "Successfully Reported Thanks A LoT", Toast.LENGTH_SHORT).show()
+                val intentList = Intent(this, AfterTraining::class.java)
+                startActivity(intentList)
+            } else {
+                Toast.makeText(this@AfterForm, "Please Fill All The Details", Toast.LENGTH_SHORT)
+                    .show()
+            }
+        }
+
+        uploadVideoTextView = binding.uploadVd
         uploadVideoTextView.setOnClickListener {
             // Open the file picker
             val intent = Intent(Intent.ACTION_GET_CONTENT)
@@ -45,16 +87,19 @@ class AfterForm : AppCompatActivity() {
                     R.id.radio_pirates ->
                         if (checked) {
                             // Pirates are the best
+                            a = 1;
 
                         }
                     R.id.radio_ninjas ->
                         if (checked) {
                             // Ninjas rule
+                            a = 2;
                         }
                 }
             }
         }
     }
+    @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 

@@ -31,21 +31,110 @@
         app:layout_constraintTop_toBottomOf="@+id/heroSection"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/pre91"
+        android:layout_width="40dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="14dp"
+        android:gravity="center"
+        android:text="+91"
+        android:textSize="20sp"
+        android:layout_marginTop="106dp"
+        app:layout_constraintEnd_toStartOf="@id/userPhone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/runningText"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/userPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="98dp"
+        android:layout_marginEnd="35dp"
+        app:boxCornerRadiusBottomEnd="8dp"
+        app:boxCornerRadiusBottomStart="8dp"
+        app:boxCornerRadiusTopEnd="8dp"
+        app:boxCornerRadiusTopStart="8dp"
+        app:boxBackgroundColor="#F3F3F3"
+        app:boxStrokeColor="#FF0000"
+        app:boxStrokeWidth="2dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/runningText">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etuserPhone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/userPhone"
+            android:inputType="phone"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/userPhone"
+        app:layout_constraintEnd_toEndOf="parent">
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/otpTextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:boxCornerRadiusBottomEnd="8dp"
+        app:boxCornerRadiusBottomStart="8dp"
+        app:boxCornerRadiusTopEnd="8dp"
+        app:boxCornerRadiusTopStart="8dp"
+        app:boxBackgroundColor="#F3F3F3"
+        app:boxStrokeColor="#FF0000"
+        app:boxStrokeWidth="2dp"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/otpEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="Put OTP Here"
+            android:maxLength="1"
+            android:textSize="24sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+    <!--<View
+        android:id="@+id/progressBar"
+        android:layout_height="150dp"
+        android:layout_width="160dp"
+        android:background="@drawable/progress_bar"
+        android:visibility="gone"
+        android:fontFamily="serif-monospace"
+        android:gravity="center"
+        android:layout_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userPhone"
+        app:layout_constraintBottom_toBottomOf="parent"/>-->
     <TextView
         android:id="@+id/btnNav"
         android:layout_height="150dp"
         android:layout_width="160dp"
         android:background="@drawable/round_border"
-        android:textSize="34dp"
+        android:textSize="34sp"
+        android:visibility="visible"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
         android:fontFamily="serif-monospace"
         android:gravity="center"
         android:layout_weight="1"
-        android:text="Report"
+        android:text="Verify"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userPhone"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

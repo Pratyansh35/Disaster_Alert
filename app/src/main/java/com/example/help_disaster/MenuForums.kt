@@ -13,7 +13,13 @@ class MenuForums : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMenuForumsBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.btnForm.setOnClickListener {
+
+        binding.btnTrain.setOnClickListener {
+            val intent = Intent(this, AfterTraining::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnReport.setOnClickListener {
             val intent = Intent(this, AfterForm::class.java)
             startActivity(intent)  }
             val runningText = binding.runningText
